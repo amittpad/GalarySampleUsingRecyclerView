@@ -5,8 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -16,11 +19,11 @@ import java.util.ArrayList;
  */
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
-    private ArrayList<ImageListPojo>  androidVersion;
+    private ArrayList<ImageListPojo>  myArrayList;
     private Context context;
 
     public ImageAdapter(Context context, ArrayList<ImageListPojo> androidVersion) {
-        this.androidVersion =  androidVersion;
+        this.myArrayList =  androidVersion;
         this.context = context;
     }
 
@@ -32,12 +35,35 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Picasso.with(context).load(androidVersion.get(position).getImage_url()).resize(120, 60).into(holder.img);
+        //Using Picasso loading image
+       /* Picasso.with(context)
+                .load(myArrayList.get(position).getImage_url())
+                .resize(250, 180)
+                .centerCrop()
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error_pic)
+                .into(holder.img);*/
+
+        //Using Ion loading image
+        Ion.with(holder.img)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error_pic)
+                .animateIn(AnimationUtils.loadAnimation(context, R.anim.fade_in_animation))
+                .load(myArrayList.get(position).getImage_url());
+
+           /* Glide.with(context)
+                    .load(myArrayList.get(position).getImage_url())
+                    .thumbnail(0.5f)
+                    .placeholder(R.drawable.placeholder)
+                    .crossFade()
+                    .into(holder.img);*/
+
     }
+
 
     @Override
     public int getItemCount() {
-        return androidVersion.size();
+        return myArrayList.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
         ImageView img;

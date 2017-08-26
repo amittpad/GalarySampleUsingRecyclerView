@@ -10,11 +10,14 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private final String image_urls[] = {
-            "http://i.imgur.com/ovr0NAF.jpg",
-            "http://i.imgur.com/n6RfJX2.jpg",
-            "http://i.imgur.com/qpr5LR2.jpg",
-            "http://i.imgur.com/pSHXfu5.jpg",
-            "http://i.imgur.com/3wQcZeY.jpg",
+            "https://www.w3schools.com/css/img_fjords.jpg",
+            "https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg",
+            "http://www.qygjxz.com/data/out/8/4421389-android-wallpaper.png",
+            "https://www.androidcentral.com/sites/androidcentral.com/files/styles/w550h500/public/wallpapers/dc-superhero-suits-a8o.jpg?itok=KSU3SFs-",
+            "http://www.planwallpaper.com/static/images/11-sea-beach-sand-wallpaper_sf9i1b6.jpg",
+            "http://www.planwallpaper.com/static/images/303836.jpg",
+            "http://www.planwallpaper.com/static/images/colorful-triangles-background.jpg",
+            "http://www.planwallpaper.com/static/images/i-should-buy-a-boat.jpg"
 
     };
 
@@ -29,19 +32,19 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList androidVersion = prepareData();
-        ImageAdapter adapter = new ImageAdapter(getApplicationContext(),androidVersion);
+        ArrayList myArrayList = prepareData();
+        ImageAdapter adapter = new ImageAdapter(getApplicationContext(),myArrayList);
         recyclerView.setAdapter(adapter);
     }
 
     private ArrayList prepareData() {
 
-        ArrayList<ImageListPojo> android_version = new ArrayList<>();
+        ArrayList<ImageListPojo> my_arraylist = new ArrayList<>();
         for (int i = 0; i < image_urls.length; i++) {
-            ImageListPojo androidVersion = new ImageListPojo();
-            androidVersion.setImage_url(image_urls[i]);
-            android_version.add(androidVersion);
+            ImageListPojo imageListPojos = new ImageListPojo();
+            imageListPojos.setImage_url(image_urls[i]);
+            my_arraylist.add(imageListPojos);
         }
-        return android_version;
+        return my_arraylist;
     }
 }
