@@ -2,7 +2,9 @@ package com.example.amittpad.galarysampleusingrecyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -36,9 +38,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         //Using Picasso loading image
-       /* Picasso.with(context)
+        /*Picasso.with(context)
                 .load(myArrayList.get(position).getImage_url())
-                .resize(250, 180)
+                .resize(240, 120)
                 .centerCrop()
                 .placeholder(R.drawable.placeholder)
                 .error(R.drawable.error_pic)
@@ -51,6 +53,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
                 .animateIn(AnimationUtils.loadAnimation(context, R.anim.fade_in_animation))
                 .load(myArrayList.get(position).getImage_url());
 
+        //Using Glide loding image
            /* Glide.with(context)
                     .load(myArrayList.get(position).getImage_url())
                     .thumbnail(0.5f)
@@ -73,4 +76,5 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
             img = (ImageView)view.findViewById(R.id.iv_photo);
         }
     }
+
 }

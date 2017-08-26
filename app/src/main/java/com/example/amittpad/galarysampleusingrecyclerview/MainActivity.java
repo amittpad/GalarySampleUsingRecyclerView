@@ -1,9 +1,11 @@
 package com.example.amittpad.galarysampleusingrecyclerview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -35,6 +37,73 @@ public class MainActivity extends AppCompatActivity {
         ArrayList myArrayList = prepareData();
         ImageAdapter adapter = new ImageAdapter(getApplicationContext(),myArrayList);
         recyclerView.setAdapter(adapter);
+        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(MainActivity.this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                for (int i=0;i<position;i++){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+
+               /* if (position == 1){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                if (position == 2){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                if (position == 3){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                if (position == 4){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                if (position == 5){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                if (position == 6){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+                if (position == 7){
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    String sImage =image_urls[position];
+                    intent.putExtra("Position_Id",sImage);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }*/
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
     }
 
     private ArrayList prepareData() {
