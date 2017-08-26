@@ -1,6 +1,7 @@
 package com.example.amittpad.galarysampleusingrecyclerview;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -41,11 +42,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 for (int i=0;i<position;i++){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
+                    /*Intent intent = new Intent(MainActivity.this,FullFragment.class);
                     String sImage =image_urls[position];
                     intent.putExtra("Position_Id",sImage);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);*/
+
+                    Intent intent = new Intent(MainActivity.this,FullFragment.class);
+                    Fragment argumentFragment = new Fragment();//Get Fragment Instance
+                    Bundle data = new Bundle();//Use bundle to pass data
+                    String sImage =image_urls[position];
+                    data.putString("data", sImage);//put string, int, etc in bundle with a key value
+                    argumentFragment.setArguments(data);//Finally set argument bundle to fragment
                     startActivity(intent);
+
                 }
 
                /* if (position == 1){
