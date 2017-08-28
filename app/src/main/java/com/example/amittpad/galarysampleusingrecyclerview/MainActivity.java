@@ -42,71 +42,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 for (int i=0;i<position;i++){
-                    /*Intent intent = new Intent(MainActivity.this,FullFragment.class);
+                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
                     String sImage =image_urls[position];
                     intent.putExtra("Position_Id",sImage);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);*/
+                    startActivity(intent);
 
-                    Intent intent = new Intent(MainActivity.this,FullFragment.class);
+                   /* Intent intent = new Intent(MainActivity.this,FullFragment.class);
                     Fragment argumentFragment = new Fragment();//Get Fragment Instance
                     Bundle data = new Bundle();//Use bundle to pass data
                     String sImage =image_urls[position];
                     data.putString("data", sImage);//put string, int, etc in bundle with a key value
                     argumentFragment.setArguments(data);//Finally set argument bundle to fragment
                     startActivity(intent);
-
+*/
                 }
 
-               /* if (position == 1){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-                if (position == 2){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-                if (position == 3){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-                if (position == 4){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-                if (position == 5){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-                if (position == 6){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-                if (position == 7){
-                    Intent intent = new Intent(MainActivity.this,FullImageViewActivity.class);
-                    String sImage =image_urls[position];
-                    intent.putExtra("Position_Id",sImage);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }*/
+
             }
 
             @Override
