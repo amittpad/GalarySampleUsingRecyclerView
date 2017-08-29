@@ -20,7 +20,15 @@ public class MainActivity extends AppCompatActivity {
             "http://www.planwallpaper.com/static/images/11-sea-beach-sand-wallpaper_sf9i1b6.jpg",
             "http://www.planwallpaper.com/static/images/303836.jpg",
             "http://www.planwallpaper.com/static/images/colorful-triangles-background.jpg",
-            "http://www.planwallpaper.com/static/images/i-should-buy-a-boat.jpg"
+            "http://www.planwallpaper.com/static/images/i-should-buy-a-boat.jpg",
+            "http://cdn.wccftech.com/wp-content/uploads/2017/02/Oreo-Two-Cookies.jpg",
+            "https://www.gammerson.com/wp-content/uploads/2017/03/Google-Android-O-e1490972227545.jpg",
+            "http://cdn02.androidauthority.net/wp-content/uploads/2017/08/animation-battery.gif",
+            "http://fscl01.fonpit.de/userfiles/6727621/image/2016/ANDROID-M-N-O-P/AndroidPIT-android-O-Oreo-2065.jpg",
+            "http://images.anandtech.com/doci/10587/Anroid_Nougat-Cover_678x452.png",
+            "http://www.retrosweets.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/h/wheel-lollipop.jpg",
+            "http://data1.ibtimes.co.in/cache-img-0-450/en/full/570675/1436615678_micromax-launch-canvas-play-android-lollipop-soon.jpg",
+            "https://i.kinja-img.com/gawker-media/image/upload/s--ITmezh3R--/c_scale,fl_progressive,q_80,w_800/fshb2xuu10edhssnikxd.jpg",
 
     };
 
