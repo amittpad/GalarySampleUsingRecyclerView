@@ -55,20 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("Position_Id",sImage);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
-
-                   /* Intent intent = new Intent(MainActivity.this,FullFragment.class);
-                    Fragment argumentFragment = new Fragment();//Get Fragment Instance
-                    Bundle data = new Bundle();//Use bundle to pass data
-                    String sImage =image_urls[position];
-                    data.putString("data", sImage);//put string, int, etc in bundle with a key value
-                    argumentFragment.setArguments(data);//Finally set argument bundle to fragment
-                    startActivity(intent);
-*/
                 }
-
-
             }
-
             @Override
             public void onLongItemClick(View view, int position) {
 

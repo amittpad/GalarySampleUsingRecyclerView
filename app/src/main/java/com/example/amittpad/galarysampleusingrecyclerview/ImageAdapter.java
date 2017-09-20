@@ -2,17 +2,13 @@ package com.example.amittpad.galarysampleusingrecyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.koushikdutta.ion.Ion;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -24,14 +20,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     private ArrayList<ImageListPojo>  myArrayList;
     private Context context;
 
-    public ImageAdapter(Context context, ArrayList<ImageListPojo> androidVersion) {
-        this.myArrayList =  androidVersion;
+    public ImageAdapter(Context context, ArrayList<ImageListPojo> myArrayList) {
+        this.myArrayList =  myArrayList;
         this.context = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_image, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_child, parent, false);
         return new ViewHolder(view);
     }
 
